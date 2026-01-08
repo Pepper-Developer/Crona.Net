@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>.Crona</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --border-color: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            border: 2px solid var(--border-color);
+            padding: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease forwards;
+            animation-delay: 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(15px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--text-color);
+            margin: 12px auto 0;
+            animation: underlineExpand 0.8s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeText 0.6s ease forwards;
+        }
+
+        p:nth-of-type(1) { animation-delay: 0.6s; }
+        p:nth-of-type(2) { animation-delay: 0.9s; }
+        p:nth-of-type(3) { animation-delay: 1.2s; }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeText 0.6s ease forwards;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes underlineExpand {
+            to {
+                width: 120px;
+            }
+        }
+
+        @keyframes fadeText {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>.Crona</h1>
+
+        <h2>Why Use .Crona</h2>
+        <p>
+            .Crona is a lightweight scripting language developed by Skidware Productions.
+            It is built to support fast development of custom clients and utility tools,
+            with a focus on low overhead and clear structure. They Got the name From A User of skidware Now nammed Pepper-the-Developer it was nammed .Crona after peppers obsession over a charcter from an anime called Soul Eater.
+        </p>
+
+        <p>
+            One of its main uses is within <strong>Ketamine Client</strong>, a lightweight
+            VRChat utility tool. In this setup, .Crona is used to handle modules,
+            client-side logic, and feature control without adding unnecessary complexity.
+        </p>
+
+        <p>
+            .Crona Was Developed back in 2020 By a user named Pepper-the-Developer And Bashton-the-Developer also known together as the owners of skidware productions. Skidware used to make extentions for school chromebooks used to fry certain apps by abusing Javascript features and Settings within Chromebooks allowing them to Shutdown a Protective Software called Linewise they called it Linewizer.Crona , They also went on to create a Popular/NonPopular Free Client Called Liksva Client, They also used .Crona to mess with and make A Township Tale Hacks From Usual Forks of a hack called Township Puppeteer By Merely. Merely and Pepper Were close friends though Bashton.is. Was never around for that time. They are still active and are still making clients like ketamine or Liksva Syndicate (the Upper of Liksva Client) They Also are bringing back Ketamine Utils to Raid and Ruin Servers using Abusive features with Udon Events with ketamine. They also are using a way to dual Boot Vrchat with Multiple Clients.
+        </p>
+
+        <div class="footer">
+	Pepper.Crona(WebLaunchV0)
+        </div>
+    </div>
+
+</body>
+</html>
