@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>pepper-dev</title>
+
+<style>
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    background:black;
+    font-family:Arial, sans-serif;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+/* Animated purple background */
+.bg{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(270deg,#12001f,#3b0066,#000,#5b00ff);
+    background-size:600% 600%;
+    animation:bgmove 15s ease infinite;
+    filter:blur(30px);
+    opacity:0;
+    transition:2s;
+}
+
+@keyframes bgmove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* click to open */
+#overlay{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:60px;
+    color:#caa6ff;
+    background:radial-gradient(circle,#4b00aa,#000);
+    text-shadow:0 0 40px #8b3cff;
+    z-index:5;
+    animation:pulse 2s infinite;
+    transition:1s;
+}
+
+@keyframes pulse{
+    0%{opacity:1;}
+    50%{opacity:.6;}
+    100%{opacity:1;}
+}
+
+/* profile card */
+#card{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:360px;
+    background:rgba(15,0,40,0.7);
+    backdrop-filter:blur(20px);
+    border-radius:18px;
+    box-shadow:0 0 40px rgba(139,60,255,.4);
+    padding:35px;
+    text-align:center;
+    color:#e2ccff;
+    opacity:0;
+    transition:2s;
+}
+
+/* avatar */
+.avatar{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:4px solid #8b3cff;
+    box-shadow:0 0 25px #8b3cff;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+/* floating name */
+.name{
+    font-size:36px;
+    color:#d6b6ff;
+    text-shadow:0 0 20px #8b3cff;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+/* glowing keywords */
+.glow{
+    color:#b366ff;
+    font-weight:bold;
+    animation:glowpulse 2s infinite alternate;
+}
+
+@keyframes glowpulse{
+    0%{text-shadow:0 0 10px #8b3cff;}
+    100%{text-shadow:0 0 30px #c77dff,0 0 60px #5b00ff;}
+}
+
+.bio{
+    margin-top:15px;
+    font-size:13px;
+    line-height:1.6;
+    color:#bda2ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg" id="bg"></div>
+
+<div id="overlay">Click to Open</div>
+
+<div id="card">
+    <img src="Crona.png" class="avatar">
+    <div class="name">pepper-dev</div>
+
+    <div class="bio">
+        Hi my name is Pepper-developer and i make hacks like clients and such for indie games.
+        I made <span class="glow">Ketamine Utilities</span> and <span class="glow">Liksva Client</span>.
+        I like to program client modification hacks using https values and C#.
+        I mainly work with python for its wide range of options.
+        Ive been coding since i was 10 years old.
+    </div>
+</div>
+
+<audio id="music">
+    <source src="YYD.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let started=false;
+
+document.body.addEventListener("click",()=>{
+    if(started) return;
+    started=true;
+
+    document.getElementById("music").play();
+    document.getElementById("overlay").style.opacity="0";
+    document.getElementById("bg").style.opacity="1";
+    document.getElementById("card").style.opacity="1";
+
+    setTimeout(()=>document.getElementById("overlay").remove(),1200);
+});
+</script>
+
+</body>
+</html>
